@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_13_054413) do
+ActiveRecord::Schema.define(version: 2021_08_13_095350) do
 
   create_table "microposts", charset: "utf8mb4", force: :cascade do |t|
     t.string "content"
