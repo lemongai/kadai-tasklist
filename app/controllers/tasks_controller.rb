@@ -1,6 +1,14 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
   before_action :require_user_logged_in
+  before_action :ensure_user, {only: [:show, :edit, :update, :destroy]}
+  
+  def ensure_user
+    if @current_user.id != @task.user_id
+      redirect_to root_url
+    end
+  end
+  
   def index
     if logged_in?
       @task = current_user.tasks.build  # form_with 用
