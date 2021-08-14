@@ -15,10 +15,13 @@ class UsersController < ApplicationController
       render :new
     end
   end
-end
+#end
 
 private
 
   def user_params
     params.require(:user).permit(:name, :email, :password)
   end
+
+#end位置を修正
+end
